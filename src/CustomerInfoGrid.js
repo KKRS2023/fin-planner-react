@@ -20,7 +20,7 @@ const CustomerInfoGrid= ({navigation}) => {
     const custId = location.custId;
     console.log(custId);
     useEffect(() => {
-        fetch("http://localhost:8080/account/v1/10000002")
+        fetch(" https://93688aa9dac1ed.lhr.life/account/v1/10000002")
           .then((data) => data.json())
           .then((data) => setTableData(data))
       }, [])
