@@ -8,7 +8,7 @@ function Header() {
           <h3 className="float-md-start mb-0">Financial Planner</h3>
           <img
             className="mb-4 nvb-img"
-            src={require("./NW_Squircle_RGB.png")}
+            src={require("../logo/NW_Squircle_RGB.png")}
             alt=""
             width="72"
             height="57"
