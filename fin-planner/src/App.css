@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nvb-btn {
+  color: #5A287D;
+}
+
+.nvb-input {
+  width: 50%;
+  display:inline;
+}
+
+.nvb-img{
+  float: right;
+  vertical-align: top;
+}
+
+.nvb-main-px
+{
+  padding-top: 5rem;
+}
+.nvb-text-bg{
+  background-color: #5A287D;
+  color:#fff;
+}
+
+.MuiDataGrid-columnSeparator{
+  visibility: initial !important;
+}
+.nvb-grid{
+  color:#fff !important;
+}
