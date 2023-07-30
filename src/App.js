@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./HomePage";
-import CustomerInfo from "./CustomerInfo";
-import Footer from "./Footer";
-import Header from "./Header"
+import HomePage from "./components/HomePage";
+import CustomerInfo from "./components/CustomerInfo";
+import Footer from "./components/Footer";
+import Header from "./components/Header"
 
 function App() {
   return (
