@@ -1,56 +1,50 @@
-import React, { useEffect } from 'react';
-import {useLocation} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import CustomerTable from "./CustomerTable";
 
+const CustomerInfo = ({}) => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-const CustomerInfo = ({  }) => {
-    const location = useLocation();
-    const resultOfApi = location.state.result.apiResult;
-    delete resultOfApi['debts'];
-    const TableData = [resultOfApi];
-   
+  const resultOfApi = location.state.result.apiResult;
+  //const [plan, setPlan] = useState("");
 
-    function DynamicTable(){
-    const column = Object.keys(TableData[0]);
-    const ThData =()=>{
-        return column.map((data)=>{
-            return <th key={data}>{data}</th>
-        })
-    }
-    const tdData =() =>{   
-        return TableData.map((data)=>{
-        return(
-            <tr>
-                    {
-                    column.map((v)=>{
-                        return <td>{data[v]}</td>
-                    })
-                    }
-            </tr>
-        )
-        })
-    }
-    return (
-        <table className="table">
-            <thead className="nvb-tbl-header">
-            <tr>{ThData()}</tr>
-            </thead>
-            <tbody>
-            {tdData()}
-            </tbody>
-        </table>
-    )
-    }
+  const handleRequest = () => {
+    console.log("resultOfApi", resultOfApi);
+    axios
+      .post(`http://localhost:8080/repay/v1/plan`, resultOfApi, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          let plan = response.data
+          navigate("/debtPlan", { state: { result: { plan } } });
+        }
+      })
+      .catch((err) => {
+        console.log("Error from post call");
+      });
+  };
 
-    return (
-        <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <main className="px-3 nvb-main-px">
-            <h3>Customer Information</h3>
-            <div>
-            <DynamicTable/>
-            </div>
-        </main>
-        </div>
-        );
-    };
+  return (
+    <div className="cover-container d-flex w-80 h-100 p-3 mx-auto flex-column">
+     <main className="px-4 nvb-main-px">
+      <h3>Customer Information</h3>
+      <CustomerTable customerData={resultOfApi} />
+      
+      
+        <button
+          className="btn btn-lg btn-light fw-bold border-white nvb-btn px-4"
+          onClick={handleRequest}
+        >
+          Calculate Plan
+        </button>
+      </main>
     
-    export default CustomerInfo;
+      </div>
+  );
+};
+
+export default CustomerInfo;

@@ -17,7 +17,7 @@ const HomePage = ({}) => {
     if(customerId.length != 8){
       toast.error("Please enter valid customerId")
     }else{
-      axios.get('https://5adee8e25c9519.lhr.life/account/v1/'+ customerId)
+      axios.get('http://localhost:8080/account/v1/'+ customerId)
       .then(function (response) {
         let apiResult = response.data
       if(!Object.keys(apiResult).length){
