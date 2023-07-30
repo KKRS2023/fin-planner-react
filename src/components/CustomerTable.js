@@ -1,16 +1,12 @@
 import React from "react";
+import "./CustomerTable.css";
 
 const CustomerTable = (props) => {
   const customerData = props.customerData;
   return (
-    <div>
-      <table className="table">
-        <thead className="nvb-tbl-header">
-          <tr>
-            <td key="Field"><b>Field</b></td>
-            <td key="Value"><b>Value</b></td>
-          </tr>
-        </thead>
+    <div className="center rdiv">
+      <h3>Customer Information</h3>
+      <table className="table ">
         <tbody>
           <tr>
             <td>Customer Id</td>

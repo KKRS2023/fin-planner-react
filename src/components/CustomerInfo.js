@@ -19,7 +19,7 @@ const CustomerInfo = ({}) => {
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);
-          let plan = response.data
+          let plan = response.data;
           navigate("/debtPlan", { state: { result: { plan } } });
         }
       })
@@ -30,11 +30,8 @@ const CustomerInfo = ({}) => {
 
   return (
     <div className="cover-container d-flex w-80 h-100 p-3 mx-auto flex-column">
-     <main className="px-4 nvb-main-px">
-      <h3>Customer Information</h3>
-      <CustomerTable customerData={resultOfApi} />
-      
-      
+      <main>
+        <CustomerTable customerData={resultOfApi} />
         <button
           className="btn btn-lg btn-light fw-bold border-white nvb-btn px-4"
           onClick={handleRequest}
@@ -42,8 +39,7 @@ const CustomerInfo = ({}) => {
           Calculate Plan
         </button>
       </main>
-    
-      </div>
+    </div>
   );
 };
 
