@@ -4,7 +4,7 @@ const CustomerTable = (props) => {
   const customerData = props.customerData;
   return (
     <div>
-      <table className="table">
+      <table className="table nvg-tbl">
         <thead className="nvb-tbl-header">
           <tr>
             <td key="Field"><b>Field</b></td>
