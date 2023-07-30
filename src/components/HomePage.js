@@ -2,6 +2,7 @@ import React from "react";
 import { ChangeEvent, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import axios from "axios";
 
 const HomePage = ({}) => {
  
@@ -13,11 +14,18 @@ const HomePage = ({}) => {
   };
 
   const handleClick = () => {
-    console.log("customerId", customerId)
     if(customerId.length != 8){
       toast.error("Please enter valid customerId")
     }else{
-      navigate("/CustomerInfo", { custId: { customerId } });
+      axios.get('https://5adee8e25c9519.lhr.life/account/v1/'+ customerId)
+      .then(function (response) {
+        let apiResult = response.data
+      if(!Object.keys(apiResult).length){
+        toast.error("Please enter valid customerId")
+      }else{
+        navigate("/CustomerInfo", {state:{ result: { apiResult }} });
+      }
+      });
     }   
   };
 

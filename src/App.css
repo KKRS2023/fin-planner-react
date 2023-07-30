@@ -48,3 +48,8 @@
 .nvb-grid{
   color:#fff !important;
 }
+
+.nvb-tbl-header
+{
+  text-transform: uppercase;
+}
