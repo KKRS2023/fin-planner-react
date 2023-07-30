@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/github.io/fin-planner-react/static/css/main.f8e3ac99.css",
+    "main.js": "/github.io/fin-planner-react/static/js/main.1835016d.js",
+    "static/js/787.5cfa1140.chunk.js": "/github.io/fin-planner-react/static/js/787.5cfa1140.chunk.js",
+    "static/media/NW_Squircle_RGB.png": "/github.io/fin-planner-react/static/media/NW_Squircle_RGB.77cc40baee31118b11d4.png",
+    "index.html": "/github.io/fin-planner-react/index.html",
+    "main.f8e3ac99.css.map": "/github.io/fin-planner-react/static/css/main.f8e3ac99.css.map",
+    "main.1835016d.js.map": "/github.io/fin-planner-react/static/js/main.1835016d.js.map",
+    "787.5cfa1140.chunk.js.map": "/github.io/fin-planner-react/static/js/787.5cfa1140.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8e3ac99.css",
+    "static/js/main.1835016d.js"
+  ]
+}
