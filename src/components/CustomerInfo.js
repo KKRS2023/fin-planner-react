@@ -20,7 +20,7 @@ const CustomerInfo = ({}) => {
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);
-          let plan = response.data
+          let plan = response.data;
           navigate("/debtPlan", { state: { result: { plan } } });
         }
       })
@@ -44,8 +44,7 @@ const CustomerInfo = ({}) => {
           Calculate Plan
         </button>
       </main>
-    
-      </div>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ import DebtPlan from "./components/DebtPlan";
 
 function App() {
   return (
-    <div>
+    <div className="Container Content">
       <Header/>
       <Router>
         <Routes>

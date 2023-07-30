@@ -1,5 +1,5 @@
 import { React} from "react";
-import { ToastContainer } from "react-toastify";
+import './Debtplan.css'
 import Repayment from "./Repayment";
 import { useLocation} from "react-router-dom";
 
@@ -10,22 +10,20 @@ function DebtPlan() {
 
 console.log("Debt Plan", debtPlan);
 
-  const displayRepayments = payments.map((element) => {
+const displayRepayments = payments != null && payments.length > 0 ? (payments.map((element) => {
     return (
       <div>
         <Repayment replay={element} />
       </div>
     );
-  });
+  })) : null;
 
   return (
-    <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <ToastContainer />
-      <main className="px-3 nvb-main-px">
-        <h3>Debt Plan</h3>
+    <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column ">
+      <main>
+        <h3>Debt Repayment Plan</h3>
         <div>
-          <p>{debtPlan.message != null ? debtPlan.message : "Initial Load"}</p>
-          <p>{payments.length > 0 ? displayRepayments : "Initial Load"}</p>
+          {payments != null && payments.length > 0 ? displayRepayments : debtPlan.message}
         </div>
       </main>
     </div>

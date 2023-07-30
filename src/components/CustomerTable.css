@@ -1,0 +1,19 @@
+.rdiv {
+    text-align: left;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 25px;
+    border: 2px solid #73ad21;
+    padding: 20px;
+  }
+  
+  .center {
+      margin: 20px auto 0 auto;
+      width: 80%;
+      border: 3px solid green;
+      padding: 20px;
+    }
+  
+    h3{
+      text-align: center;
+    }

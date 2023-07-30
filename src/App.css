@@ -59,8 +59,21 @@
   --bs-table-color:#5A287D;
  }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.Container
+{
+    /* height: 200px; */
+    overflow-x: auto;
+}
+/* .Content
+{
+    height: 300px;
+} */
+
+.Flipped
+{
+    direction: rtl;
+}
+.Content
+{
+    direction: ltr;
 }
