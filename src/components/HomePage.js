@@ -1,18 +1,29 @@
 import React from "react";
 import { ChangeEvent, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 const HomePage = ({}) => {
+ 
   const [customerId, setCustomerID] = useState("");
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     setCustomerID(e.target.value);
   };
+
   const handleClick = () => {
-    navigate("/CustomerInfo", { custId: { customerId } });
+    console.log("customerId", customerId)
+    if(customerId.length != 8){
+      toast.error("Please enter valid customerId")
+    }else{
+      navigate("/CustomerInfo", { custId: { customerId } });
+    }   
   };
+
   return (
     <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <ToastContainer/>
       <main className="px-3 nvb-main-px">
         <h3>Key in your Customer ID</h3>
         <div className="form-floating ">
